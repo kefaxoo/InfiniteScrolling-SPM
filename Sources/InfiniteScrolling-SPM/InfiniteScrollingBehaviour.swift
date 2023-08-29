@@ -50,6 +50,9 @@ public class InfiniteScrollingBehaviour: NSObject {
         
         self.configureBoundariesForInfiniteScroll()
         self.configureCollectionView()
+        
+        guard !data.isEmpty else { return }
+        
         self.scrollToFirstElement()
     }
     
