@@ -76,6 +76,8 @@ public class InfiniteScrollingBehaviour: NSObject {
     }
     
     private func addLeadingBoundaryElements() {
+        guard !self.data.isEmpty else { return }
+        
         for index in stride(from: numberOfBoundaryElements, to: 0, by: -1) {
             let indexToAdd = (self.data.count - 1) - ((numberOfBoundaryElements - index) % self.data.count)
             let data = self.data[indexToAdd]
@@ -84,6 +86,8 @@ public class InfiniteScrollingBehaviour: NSObject {
     }
     
     private func addTrailingBoundaryElements() {
+        guard !self.data.isEmpty else { return }
+        
         for index in 0..<numberOfBoundaryElements {
             let data = self.data[index % self.data.count]
             dataWithBoundary.append(data)
