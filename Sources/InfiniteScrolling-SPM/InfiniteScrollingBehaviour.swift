@@ -218,8 +218,8 @@ extension InfiniteScrollingBehaviour: UICollectionViewDelegateFlowLayout {
             return
         }
         
-        guard scrollView.contentSize.width >= updatedOffsetPoint.x,
-              scrollView.contentSize.height >= updatedOffsetPoint.y
+        guard scrollView.contentSize.width <= updatedOffsetPoint.x,
+              scrollView.contentSize.height <= updatedOffsetPoint.y
         else { return }
         
         scrollView.contentOffset = updatedOffsetPoint
